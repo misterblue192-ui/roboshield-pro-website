@@ -1,1 +1,342 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover RoboShield Pro, an automated trading EA for MetaTrader 5.">
+  <title>RoboShield Pro | MT5 Trading EA</title>
+  <style>
+    :root {
+      --gold: #d8ad55;
+      --gold-light: #f4d994;
+      --bg: #090a0c;
+      --panel: #141519;
+      --muted: #b6b6bd;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8f6f0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      border-bottom: 1px solid #29251c;
+      background: #0c0c0e;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+
+    .logo span, h1 span, h2 span { color: var(--gold); }
+
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { font-size: 13px; color: #ddd; }
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      max-width: 1150px;
+      margin: auto;
+      padding: 100px 25px 90px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.1;
+      margin: 25px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-light), #c1933d);
+      color: #111;
+      font-weight: bold;
+      padding: 13px 23px;
+      margin: 6px;
+      border-radius: 3px;
+    }
+
+    .button:hover { filter: brightness(1.12); }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 25px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-top: 10px;
+    }
+
+    .intro {
+      max-width: 680px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #302b20;
+      padding: 28px;
+      border-radius: 7px;
+    }
+
+    .card .symbol {
+      font-size: 30px;
+      color: var(--gold);
+    }
+
+    .card h3 { font-size: 18px; }
+    .card p { color: var(--muted); font-size: 14px; }
+
+    .results {
+      background: #111114;
+      border-top: 1px solid #302b20;
+      border-bottom: 1px solid #302b20;
+    }
+
+    .proof {
+      padding: 25px;
+      margin-top: 20px;
+      border: 1px dashed #79602f;
+      border-radius: 5px;
+      background: #17171a;
+    }
+
+    .proof strong { color: var(--gold-light); }
+
+    .trial {
+      background: linear-gradient(135deg, #211b10, #111114 70%);
+      border: 1px solid #54401f;
+      border-radius: 8px;
+      padding: 40px;
+      margin-top: 25px;
+    }
+
+    .trial-number {
+      color: var(--gold);
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .contact {
+      background: var(--panel);
+      border: 1px solid #302b20;
+      padding: 30px;
+      border-radius: 7px;
+      margin-top: 25px;
+    }
+
+    .risk {
+      border-left: 3px solid var(--gold);
+      background: #17140e;
+      padding: 20px;
+      color: #c7c0b1;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 1px solid #29251c;
+      color: #9b9ba1;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 18px 5%; }
+      nav { gap: 12px; }
+      .hero { padding-top: 65px; }
+      .trial { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="#home">ROBO<span>SHIELD</span> PRO</a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#results">Results</a>
+      <a href="#trial">Free Trial</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow">AUTOMATED TRADING • METATRADER 5</div>
+      <h1>Trade with a plan.<br><span>Trust the system.</span></h1>
+      <p>
+        Meet RoboShield Pro, an automated trading EA for MetaTrader 5,
+        built around programmed trading rules, hedging and recovery logic.
+        Understand the strategy and its risks before getting started.
+      </p>
+      <a class="button" href="#trial">REQUEST 7-DAY FREE TRIAL ↗</a>
+      <a class="button button-outline" href="#features">DISCOVER ROBO SHIELD</a>
+    </section>
+
+    <section class="section" id="features">
+      <div class="eyebrow">WHY ROBOSHIELD PRO</div>
+      <h2>Automation with a <span>defined process.</span></h2>
+      <p class="intro">
+        Designed for traders who want their configured trading logic
+        executed automatically through a compatible MT5 environment.
+        Automated trading still requires risk awareness and monitoring.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="symbol">⌘</div>
+          <h3>Automated Execution</h3>
+          <p>Executes programmed trading rules when the EA, platform and broker environment are operating correctly.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">⇄</div>
+          <h3>Hedging & Recovery</h3>
+          <p>Uses configured hedge and recovery logic. These methods can increase exposure and floating losses.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">◷</div>
+          <h3>7-Day Trial</h3>
+          <p>Request trial access to test compatibility and learn how the EA operates before deciding to subscribe.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="section" id="results">
+        <div class="eyebrow">TRADING TRANSPARENCY</div>
+        <h2>Results should be <span>reviewed, not assumed.</span></h2>
+        <p class="intro">
+          Review real evidence, the period covered, trading conditions and
+          drawdown. Past performance does not guarantee future results.
+        </p>
+
+        <div class="proof">
+          <strong>LIVE ACCOUNT RESULTS</strong>
+          <p>Add a genuine live account statement or verified tracking link here.</p>
+          <p>Include the date range and drawdown. Hide account numbers and private information.</p>
+        </div>
+
+        <div class="proof">
+          <strong>MT5 BACKTEST RESULTS</strong>
+          <p>Add your genuine MetaTrader 5 Strategy Tester report or screenshot here.</p>
+          <p>Include symbol, timeframe, testing period and maximum drawdown.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trial">
+      <div class="eyebrow">START WITH A TRIAL</div>
+      <h2>Try RoboShield Pro for <span>7 days.</span></h2>
+      <p class="intro">
+        Request a trial and provide the MT5 account number that needs
+        licensing. Trial activation and expiration are managed manually.
+      </p>
+
+      <div class="trial">
+        <div class="trial-number">07</div>
+        <h3>Days of trial access</h3>
+        <p>Test first. Understand the risks. Decide for yourself.</p>
+        <a class="button" href="#contact">REQUEST TRIAL ACCESS ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h2>Interested in <span>RoboShield Pro?</span></h2>
+      <p class="intro">
+        Contact our official brand page to request a trial, ask about
+        licensing, or receive the current subscription price.
+      </p>
+
+      <div class="contact">
+        <h3>RoboShield Pro Support</h3>
+        <p>Trial access • MT5 licensing • Subscription information</p>
+        <!-- Replace this URL with your official RoboShield Pro Facebook Page URL. -->
+        <a class="button" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          MESSAGE US ON FACEBOOK ↗
+        </a>
+        <p style="font-size:12px;color:#aaa">
+          Before publishing, replace this button link with your official business page.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="risk">
+        <strong>IMPORTANT RISK DISCLOSURE</strong>
+        <p>
+          Forex, CFDs and leveraged trading involve substantial risk and may
+          result in the loss of some or all of your capital. RoboShield Pro
+          does not guarantee profits. Hedging and recovery strategies can
+          increase exposure, margin usage and drawdown. Backtests do not
+          predict future results. Test on a demo account first, check your
+          broker's rules, and only risk money you can afford to lose.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>ROBOSHIELD PRO</strong></p>
+    <p>© <span id="year"></span> RoboShield Pro. All rights reserved.</p>
+    <p>Independent software product. Not affiliated with MetaQuotes or any broker unless explicitly stated.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
